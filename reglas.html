@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reglas del torneo |Torneo Rubik | 2025</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="icon" href="img/rubik.ico" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body class="container-fluid p-0">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html" id="titulo_menu">🏆 Torneo Rubik</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html" id="inicio">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="reglas.html" id="reglas">Reglas</a></li>
+                <li class="nav-item"><a class="nav-link" href="bases.html" id="bases">Bases</a></li>
+                <li class="nav-item"><a class="nav-link" href="resenas.html" id="reseñas">Reseñas</a></li>
+                <li></li>
+                <!-- Contenedor mejorado para el select -->
+                <li class="nav-item d-flex align-items-center">
+                    <label for="selectIdioma" class="text-white me-2">🌍</label>
+                    <select id="selectIdioma" class="form-select">
+                        <option value="es">🇪🇸 Español</option>
+                        <option value="en">🇬🇧 English</option>
+                        <option value="fr">🇫🇷 Français</option>
+                        <option value="de">🇩🇪 Deutsch</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Sección de Reglas -->
+<section class="container mt-5 p-4">
+    <div class="rules-concurso">
+        <h1 class="text-center text-primary fw-bold dark-rules" id="reglas_curso">Reglas del Concurso</h1>
+    </div>
+    
+    <br>
+    <div class="rules-container p-4 shadow-lg rounded bg-light">
+        <ol class="fs-5">
+            <li id="regla1">El concursante entregará el cubo al juez.</li>
+            <li id="regla2">El juez entregará el cubo a un mezclador y este lo mezclará con 15 movimientos aleatorios. Durante este tiempo el concursante no podrá ver el cubo.</li>
+            <li id="regla3">Una vez mezclado, lo pondrá en la mesa y lo tapará con una caja.</li>
+            <li id="regla4">El juez destapará el cubo y el concursante tendrá 15 segundos para inspeccionarlo sin manipularlo. Pasado este tiempo, comenzará con el armado del cubo.</li>
+            <li id="regla5">Una vez terminado de armar el cubo, lo dejará sobre la mesa y el juez registrará el tiempo del reloj.</li>
+            <li id="regla6">Si el concursante no comienza el armado en los primeros 10 segundos, será descalificado.</li>
+            <li id="regla7">Si el armado del cubo excede los 3 minutos, se dará por terminado ese intento.</li>
+            <li id="regla8">Cada jugador armará el cubo tres veces consecutivas y se tomará el menor tiempo de armado.</li>
+            <li id="regla9">En caso de empate entre dos o más participantes, se dará otra oportunidad que será definida por el jurado.</li>
+        </ol>
+        
+    </div>
+</section>
+
+<!-- Pie de Página Moderno -->
+<footer id="footer">
+    <div class="footer-content">
+        <h2 class="footer-title" id="titlefooter">Torneo Rubik 2025</h2>
+        <p class="footer-text" id="ubifooter">
+            📍 Puebla, México | Facultad de Ciencias de la Computación, BUAP
+        </p>
+        <p class="footer-text" id="contacto">
+            Contacto: <a href="mailto:info@torneorubik.com" class="text-white">info@torneorubik.com</a>
+        </p>
+
+        <!-- 🔹 Íconos Sociales Mejorados -->
+        <div class="social-icons">
+            <a href="https://www.facebook.com/TorneoRubik/?locale=es_LA" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://x.com/BUAPoficial" target="_blank" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/fccomputacion.buap/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/watch?v=S8g8inWXJDk" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a>
+        </div>
+
+        <!-- Derechos Reservados -->
+        <p class="footer-bottom" id="derechosbry">
+            &copy; 2025 Torneo Rubik - Todos los derechos reservados | Hecho por Brayan De Jesús Castillo.
+        </p>
+    </div>
+</footer>
+
+<script defer src="script.js"></script>
+
+<!-- Botón de Modo Oscuro Flotante -->
+<button id="modoOscuro" class="btn btn-dark">🌙</button>
+
+
+</body>
+</html>

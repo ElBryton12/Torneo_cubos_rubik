@@ -1,0 +1,1112 @@
+/* ========================= */
+/* 🔹 1. CONFIGURACIONES GENERALES */
+/* ========================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&display=swap');
+
+body {
+    background-color: #f8f9fa; /* Color limpio */
+    color: #212529;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ========================= */
+/* 🔹 2. NAVEGACIÓN (NAVBAR) */
+/* ========================= */
+.navbar {
+    background-color: #007bff !important; /* Azul Bootstrap */
+}
+
+.navbar a {
+    color: white !important;
+}
+
+.navbar a:hover {
+    color: #ffc107 !important; /* Efecto dorado */
+}
+
+/* ========================= */
+/* 🔹 SELECTOR DE IDIOMA */
+/* ========================= */
+#selectIdioma {
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    min-width: 150px;
+    max-width: 200px;
+    background-color: #007bff;
+    color: white;
+    border: 2px solid white;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="18px" height="18px"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+#selectIdioma:focus {
+    background-color: #007bff;
+    color: white;
+    border: 2px solid white;
+}
+
+#selectIdioma option {
+    background-color: #ffffff;
+    color: black;
+}
+
+#selectIdioma:hover {
+    background-color: #0056b3;
+}
+
+/* ========================= */
+/* 🔹 3. BANNER PRINCIPAL */
+/* ========================= */
+header {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 80px 20px;
+    color: white;
+    background: linear-gradient(-45deg, #0052D4, #4364F7, #6FB1FC, #512DA8);
+    background-size: 400% 400%;
+    animation: backgroundAnimation 10s ease infinite;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Animación del gradiente */
+@keyframes backgroundAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Hover con resplandor */
+header:hover {
+    background: linear-gradient(-45deg, #0038A8, #2845D5, #3F83F8, #311B92);
+    box-shadow: 0 0 20px rgba(0, 153, 255, 0.7);
+}
+
+/* Glassmorphism en el banner */
+header .container {
+    position: relative;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    display: inline-block;
+    transition: all 0.5s ease-in-out;
+}
+
+header:hover .container {
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* ========================= */
+/* 🔹 SECCIÓN DE CARTAS */
+/* ========================= */
+
+/* Asegurar que las tarjetas estén alineadas en una sola fila */
+.row.text-center {
+    display: flex;
+    flex-wrap: nowrap; /* Evita que las tarjetas se muevan a la siguiente línea */
+    justify-content: center; /* Centra las tarjetas si hay espacio */
+    gap: 20px; /* Espaciado uniforme entre tarjetas */
+}
+
+/* Ajustar el tamaño de las tarjetas */
+.col-md-4 {
+    flex: 1; /* Hace que las tarjetas ocupen el mismo espacio */
+    min-width: 300px; /* Tamaño mínimo para evitar que se reduzcan demasiado */
+}
+
+/* Asegurar que todas las tarjetas tengan la misma altura */
+.card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hacer que el contenido dentro de la tarjeta se distribuya correctamente */
+.card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Inicialmente ocultamos las tarjetas */
+.card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Clase que se activará con JavaScript para hacerlas visibles */
+.card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========================= */
+/* 🔹 2️⃣ Ajuste en dispositivos pequeños */
+/* ========================= */
+@media (max-width: 992px) { /* Aplicar cambios en tablets y móviles */
+    .row.text-center {
+        flex-wrap: wrap; /* Permite que las tarjetas se acomoden si es necesario */
+    }
+
+    .col-md-4 {
+        flex: 1 1 45%; /* Para que quepan dos tarjetas en una fila en tablets */
+    }
+}
+
+@media (max-width: 768px) { /* En móviles, se apilan */
+    .col-md-4 {
+        flex: 1 1 100%; /* Cada tarjeta ocupa el 100% de la pantalla en móviles */
+    }
+}
+
+/* ========================= */
+/* 🔹 SECCIÓN "¿QUÉ ES EL TORNEO?" */
+/* ========================= */
+#que-es-torneo {
+    background: #f8f9fa; /* Fondo claro */
+    padding: 50px 0;
+    min-height: 70vh; /* Ajuste para que ocupe gran parte de la pantalla sin ser demasiado alto */
+    display: flex;
+    align-items: center; /* Centra los elementos verticalmente */
+    justify-content: center;
+}
+
+/* Contenedor */
+#que-es-torneo .row {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Título */
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0056b3;
+    margin-bottom: 15px;
+}
+
+/* Texto */
+.section-text {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* Imagen */
+#que-es-torneo img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Efecto hover en la imagen */
+#que-es-torneo img:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo del botón */
+#que-es-torneo .btn {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+}
+
+/* ========================= */
+/* 🔹 RESPONSIVIDAD */
+/* ========================= */
+@media (max-width: 992px) {
+    #que-es-torneo {
+        min-height: auto; /* Ajuste para dispositivos medianos */
+        padding: 40px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    #que-es-torneo {
+        text-align: center;
+        padding: 30px 0;
+    }
+
+    #que-es-torneo .row {
+        flex-direction: column;
+        max-width: 95%;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .section-text {
+        font-size: 1.1rem;
+    }
+
+    #que-es-torneo img {
+        margin-bottom: 20px;
+        width: 80%;
+        max-width: 300px;
+    }
+}
+
+
+
+/* ========================= */
+/* 🔹 4. SECCIÓN DE CUENTA REGRESIVA */
+/* ========================= */
+#countdown {
+    width: 100%;
+    background-color: #FFC107; /* Amarillo */
+    color: #1D1D1D;
+    text-align: center;
+    padding: 20px 10px;
+}
+
+/* Contenedor flexible */
+.countdown-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Título */
+.countdown-container h2 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+/* Contenedor de los números */
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+/* Cada bloque de tiempo */
+.time-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 3.5rem;
+    font-weight: 900;
+    min-width: 120px;
+}
+
+/* Etiqueta debajo de los números */
+.time-box p {
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* ========================= */
+/* 🔹 5. SLIDER DE IMÁGENES */
+/* ========================= */
+#slider {
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-item img {
+    height: 400px;
+    object-fit: cover;
+}
+
+
+/* ========================= */
+/* 🔹 SECCIÓN DE INFORMACIÓN DEL EVENTO */
+/* ========================= */
+#event-info {
+    background: #512DA8; /* Color morado fuerte */
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.event-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch; /* 🔹 Hace que todas las cajas tengan el mismo alto */
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* 🔹 Estilos de cada caja */
+.event-box {
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    min-height: 200px; /* 🔹 Asegura que todas tengan la misma altura */
+    background: rgba(255, 255, 255, 0.1); /* Transparencia */
+    padding: 30px;
+    margin: 10px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 🔹 Centra el contenido */
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* 🔹 Hover con efecto de elevación */
+.event-box:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* 🔹 Estilos de los íconos */
+.event-box i {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+/* 🔹 Colores personalizados para cada ícono */
+.event-box:nth-child(1) i {
+    color: #FFC107; /* Amarillo */
+}
+
+.event-box:nth-child(2) i {
+    color: #00E676; /* Verde */
+}
+
+.event-box:nth-child(3) i {
+    color: #FF7043; /* Naranja */
+}
+
+/* ========================= */
+/* 🔹 RESPONSIVIDAD */
+/* ========================= */
+@media (max-width: 768px) {
+    .event-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .event-box {
+        max-width: 100%; /* 🔹 Todas las cajas ocuparán el 100% del ancho */
+        width: 90%; /* 🔹 Para dar margen en los lados */
+    }
+}
+
+
+/* ========================= */
+/* 🔹 MAPA EMBEBIDO - ANCHO COMPLETO */
+/* ========================= */
+#map-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    padding: 0; /* Elimina los espacios laterales */
+    margin: 0;
+}
+
+/* Mapa a pantalla completa */
+#map-container iframe {
+    width: 100vw; /* 100% del ancho de la ventana */
+    height: 500px; /* Altura fija */
+    border: none;
+}
+
+/* ========================= */
+/* 🔹 RESPONSIVIDAD */
+/* ========================= */
+@media (max-width: 768px) {
+    #map-container iframe {
+        height: 400px; /* Altura más pequeña para móviles */
+    }
+}
+
+@media (max-width: 480px) {
+    #map-container iframe {
+        height: 350px; /* Ajuste para dispositivos más pequeños */
+    }
+}
+
+
+/* ========================= */
+/* 🔹 PIE DE PÁGINA (FOOTER) CON IMAGEN DE FONDO */
+/* ========================= */
+#footer {
+    position: relative;
+    background: linear-gradient(135deg, rgba(61, 30, 109, 0.9), rgba(81, 45, 168, 0.9), rgba(103, 58, 183, 0.9));
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Imagen de fondo difuminada */
+#footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('img/footer.png') no-repeat center center;
+    background-size: cover;
+    filter: blur(10px) brightness(0.5); /* Difuminado y oscurecido */
+    opacity: 0.8;
+    z-index: 0;
+}
+
+/* Contenedor de contenido */
+#footer .footer-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: auto;
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Título */
+.footer-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/* Texto */
+.footer-text {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+/* 🔹 Enlaces de contacto */
+#footer a {
+    color: #FFC107;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#footer a:hover {
+    color: #FFD54F;
+}
+
+/* 🔹 Íconos Sociales */
+.social-icons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espaciado entre íconos */
+}
+
+/* 🔹 Estilo de los enlaces de redes sociales */
+.social-link {
+    color: white;
+    font-size: 1.8rem;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* 🔹 Hover: Cambia color y aplica efecto de escala */
+.social-link:hover {
+    transform: scale(1.2);
+}
+
+/* 🔹 Colores específicos por red social */
+.social-link:nth-child(1):hover { color: #1877F2; } /* Facebook */
+.social-link:nth-child(2):hover { color: #1DA1F2; } /* Twitter */
+.social-link:nth-child(3):hover { color: #E1306C; } /* Instagram */
+.social-link:nth-child(4):hover { color: #FF0000; } /* YouTube */
+
+/* Derechos reservados */
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* ========================= */
+/* 🔹 RESPONSIVIDAD */
+/* ========================= */
+@media (max-width: 768px) {
+    #footer {
+        padding: 40px 15px;
+    }
+
+    .footer-title {
+        font-size: 1.5rem;
+    }
+
+    .footer-text {
+        font-size: 0.9rem;
+    }
+
+    .social-icons a {
+        font-size: 1.3rem;
+    }
+}
+
+
+
+/* ========================= */
+/* 🔹 7. MODO OSCURO */
+/* ========================= */
+/* 🔹 Botón de Modo Oscuro - Flotante en la Esquina Inferior Derecha */
+#modoOscuro {
+    position: fixed;
+    bottom: 20px; /* Distancia desde la parte inferior */
+    right: 20px; /* Distancia desde la derecha */
+    background-color: #343a40; /* Color oscuro */
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 1000; /* Se mantiene encima del contenido */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover: cambia color y tamaño */
+#modoOscuro:hover {
+    background-color: #ffc107;
+    color: black;
+    transform: scale(1.1);
+}
+
+
+.dark-mode {
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+/* 🔹 Cambios de Fondo en Modo Oscuro */
+.dark-mode header {
+    background: linear-gradient(-45deg, #1a1a1a, #292929, #333, #000);
+    background-size: 400% 400%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* 🔹 Cubos flotantes (Modo Oscuro) */
+.dark-mode .cube {
+    background: rgba(255, 255, 255, 0.7) !important; /* Color más claro */
+}
+
+
+/* Aplicar modo oscuro a navbar, footer y contador */
+.dark-mode .navbar, 
+.dark-mode #footer, 
+.dark-mode #countdown {
+    background-color: #222 !important;
+    color: white;
+}
+
+/* ========================= */
+/* 🔹 MODO OSCURO SELECT IDIOMA*/
+/* ========================= */
+
+.dark-mode #selectIdioma {
+    background-color: #333 !important;
+    color: white !important;
+    border: 2px solid white;
+}
+
+.dark-mode #selectIdioma:hover {
+    background-color: #444 !important;
+}
+
+.dark-mode #event-info {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.dark-mode .card {
+    background-color: #222;
+    color: white;
+    border: 1px solid #444;
+}
+
+.dark-mode .card-title {
+    color: #ffc107;
+}
+
+.dark-mode .btn-primary {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: black;
+}
+
+.dark-mode .btn-primary:hover {
+    background-color: #e0a800;
+    border-color: #d39e00;
+}
+
+/* ========================= */
+/* 🔹 MODO OSCURO ¿QUE ES TORNEO? */
+/* ========================= */
+
+.dark-mode #que-es-torneo {
+    background: #1a1a1a;
+    color: #ffffff;
+}
+
+.dark-mode .section-title {
+    color: #ffc107;
+}
+
+.dark-mode .section-text {
+    color: #e0e0e0;
+}
+
+.dark-mode #que-es-torneo img {
+    box-shadow: 5px 5px 20px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode #que-es-torneo img:hover {
+    transform: scale(1.05);
+}
+
+.dark-mode #que-es-torneo .btn {
+    background-color: #ffc107;
+    color: black;
+}
+
+.dark-mode #que-es-torneo .btn:hover {
+    background-color: #e0a800;
+}
+
+
+/* ========================= */
+/* 🔹 MODO OSCURO SELECT */
+/* ========================= */
+
+.dark-mode #selectIdioma {
+    background-color: #333 !important;
+    color: white !important;
+    border: 2px solid white;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="18px" height="18px"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+.dark-mode #selectIdioma:hover {
+    background-color: #444 !important;
+}
+
+/* ========================= */
+/* 🔹 8. RESPONSIVIDAD */
+/* ========================= */
+@media (max-width: 768px) {
+    .countdown-container h2 {
+        font-size: 2rem;
+    }
+    .countdown-timer {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .time-box {
+        font-size: 3rem;
+        min-width: 100px;
+    }
+    .time-box p {
+        font-size: 1.2rem;
+    }
+
+    #selectIdioma {
+        width: 100%;
+        max-width: 100%;
+        font-size: 1rem;
+    }
+
+    .carousel-item img {
+        height: 250px;
+    }
+}
+
+
+/* Animación del gradiente */
+@keyframes backgroundAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Efecto Hover con resplandor */
+header:hover {
+    background: linear-gradient(-45deg, #0038A8, #2845D5, #3F83F8, #311B92);
+    background-size: 400% 400%;
+    box-shadow: 0 0 20px rgba(0, 153, 255, 0.7);
+}
+
+/* Contenido del banner con efecto de glassmorphism */
+header .container {
+    position: relative;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    display: inline-block;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Efecto de glassmorphism al hacer hover */
+header:hover .container {
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#cube-animation {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+/* 🔹 Cubos flotantes en modo claro */
+.cube {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 1); /* Blanco puro */
+    transform: rotate(45deg);
+    animation: floatCube 5s infinite linear;
+    transition: background 0.3s ease-in-out;
+}
+
+/* 🔹 Efecto hover en modo claro */
+.cube:hover {
+    background: rgba(200, 200, 200, 1); /* Un gris más oscuro */
+}
+
+/* 🔹 Cubos flotantes en modo oscuro */
+.dark-mode .cube {
+    background: rgba(255, 255, 255, 0.7) !important; /* Blanco translúcido */
+}
+
+/* 🔹 Efecto hover en modo oscuro */
+.dark-mode .cube:hover {
+    background: rgba(220, 220, 220, 0.9) !important; /* Un poco más oscuro pero sin azul */
+}
+
+/* 🔹 Fondo del header en modo oscuro */
+.dark-mode header {
+    background: linear-gradient(-45deg, #1a1a1a, #292929, #333, #000);
+    background-size: 400% 400%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* 🔹 Hover en modo oscuro para el header */
+.dark-mode header:hover {
+    background: linear-gradient(-45deg, #101010, #1a1a1a, #2b2b2b, #000);
+    background-size: 400% 400%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* 🔹 Efecto de hover en los cubos en modo oscuro */
+.dark-mode .cube:hover {
+    background: rgba(220, 220, 220, 0.9) !important; /* Un poco más oscuro sin azul */
+}
+
+
+/* 🔹 Animación de flotación */
+@keyframes floatCube {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    50% { transform: translateY(-20px) rotate(180deg); opacity: 0.7; }
+    100% { transform: translateY(0) rotate(360deg); opacity: 1; }
+}
+
+
+@keyframes floatCube {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    50% { transform: translateY(-20px) rotate(180deg); opacity: 0.7; }
+    100% { transform: translateY(0) rotate(360deg); opacity: 1; }
+}
+
+
+/* ========================= */
+/* 🔹 ESTILOS PARA REGLAS.HTML */
+/* ========================= */
+.rules-concurso {
+    margin-top: -20px; /* Ajusta el valor según lo necesites */
+}
+
+.rules-container {
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
+    max-width: 900px;
+    margin: auto;
+}
+
+.rules-container ol {
+    counter-reset: rule-counter;
+    padding-left: 0;
+}
+
+.rules-container li {
+    list-style: none;
+    counter-increment: rule-counter;
+    padding: 15px;
+    margin: 12px 0;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+.rules-container li::before {
+    content: counter(rule-counter);
+    font-weight: bold;
+    font-size: 1.2rem;
+    background: #007bff;
+    color: white;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 15px;
+    flex-shrink: 0;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================= */
+/* 🔹 MODO OSCURO */
+/* ========================= */
+
+.dark-mode .bases-concurso h1 {
+    color: #ffc107 !important; /* Amarillo en modo oscuro */
+}
+
+
+.dark-mode .rules-container {
+    background: linear-gradient(135deg, #1c1c1c, #2a2a2a);
+    color: #e0e0e0;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .rules-container li {
+    background: #252525;
+    color: #f5f5f5;
+    box-shadow: 2px 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .rules-container li::before {
+    background: #ffc107;
+    color: #222;
+}
+
+/* ========================= */
+/* 🔹 RESPONSIVIDAD */
+/* ========================= */
+@media (max-width: 768px) {
+    .rules-container {
+        padding: 20px;
+    }
+    .rules-container li {
+        flex-direction: column;
+        text-align: center;
+        padding: 12px;
+    }
+    .rules-container li::before {
+        margin-bottom: 10px;
+    }
+}
+
+
+/* ========================= */
+/* 🔹 ESTILOS PARA BASES.HTML */
+/* ========================= */
+.bases-concurso {
+    margin-top: -20px; /* Ajusta el valor según lo necesites */
+}
+
+.bases-container {
+    background: radial-gradient(circle, #ffffff, #f1f1f1);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.25);
+    position: relative;
+    max-width: 1100px;
+    margin: auto;
+    transition: all 0.3s ease-in-out;
+    border-left: 8px solid #007bff;
+}
+
+.bases-container:hover {
+    transform: translateY(-5px);
+}
+
+.bases-container p {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 3px 4px 12px rgba(0, 0, 0, 0.15);
+    border-left: 6px solid #007bff;
+}
+
+/* ========================= */
+/* 🔹 MODO OSCURO */
+/* ========================= */
+.dark-mode .bases_titulo h1 {
+    color: #ffc107 !important; /* Amarillo en modo oscuro */
+}
+
+.dark-mode .bases-container {
+    background: radial-gradient(circle, #2c2c2c, #1f1f1f);
+    color: #eaeaea;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    border-left: 8px solid #ff9800;
+}
+
+.dark-mode .bases-container p {
+    background: #323232;
+    color: white;
+    box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.1);
+    border-left: 6px solid #ff9800;
+}
+
+/* ========================= */
+/* 🔹 RESPONSIVIDAD */
+/* ========================= */
+@media (max-width: 768px) {
+    .bases-container {
+        padding: 30px;
+    }
+    .bases-container p {
+        text-align: center;
+        padding: 20px;
+    }
+}
+
+/* ========================= */
+/* 🔹 ESTILOS PARA RESEÑAS.HTML */
+/* ========================= */
+
+.reseñas-concurso {
+    margin-top: -20px; /* Ajusta el valor según lo necesites */
+}
+
+.ganador-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.ganador-img:hover {
+    transform: scale(1.1);
+}
+
+.ganador-img, .ganador-nombre, .ganador-descripcion {
+    margin-bottom: 15px;
+}
+
+.ganador-nombre {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.ganador-descripcion {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Añadir margen inferior al título de ganadores */
+#ganadores_titulo {
+    margin-bottom: 30px;
+}
+
+/* Reducir el margen superior de la sección de ganadores */
+section.mt-4 {
+    margin-top: 20px;
+}
+
+/* Modo oscuro */
+body.dark-mode #reseñas_titulo,
+body.dark-mode #ganadores_titulo {
+    color: #ffc107 !important;
+}
+/* Estilos para el botón de modo oscuro */
+#modoOscuro {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    border-radius: 50%;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+}
+
+/* Estilos para el pie de página */
+#footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.footer-text {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.social-icons {
+    margin: 10px 0;
+}
+
+.social-link {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-link:hover {
+    color: #007bff;
+}
+
+.footer-bottom {
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
